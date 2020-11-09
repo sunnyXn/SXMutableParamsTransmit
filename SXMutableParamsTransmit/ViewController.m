@@ -55,6 +55,7 @@
     
     SX_OBJECT_FUNC_ARGS(_obj, sel , title , subTitle , dict , ary);
     
+    title = nil , subTitle = nil, ary = nil;
     result = [_obj sx_performSelector:selctor withObjects:title , subTitle , dict , ary , nil];
     
     

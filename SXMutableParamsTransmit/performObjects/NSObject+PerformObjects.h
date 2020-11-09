@@ -63,8 +63,20 @@ func (_obj, setSelector, ##__VA_ARGS__);                  \
  @param object 第一个参数，可以接多个参数
  @return 返回id类型
  */
-- (id)sx_performSelector:(SEL)selector withObjects:(id)object,...NS_REQUIRES_NIL_TERMINATION;
+//- (id)sx_performSelector:(SEL)selector withObjects:(id)object,...NS_REQUIRES_NIL_TERMINATION;
 
+
+/**
+ 1.调用函数,参数不定，
+ 2.参数以nil结尾
+ 3.函数不存在不会导致crash
+ NSInvocation实现
+ #warning:函数不存在可能会造成内存泄露memoryleaks
+ @param selector 函数
+ @param object 第一个参数，可以接多个参数
+ @return 返回id类型
+ */
+- (id)sx_performSelector:(SEL)selector withObjects:(id)object,...NS_REQUIRES_NIL_TERMINATION;
 
 
 @end
